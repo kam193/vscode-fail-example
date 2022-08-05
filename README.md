@@ -23,3 +23,9 @@ Steps to debug the troubles:
 
     3. Now run tests once more, and in the selected logs directory, in the debugpy.adapter-xxx.log file, look for "category": "stdout". You will see outputs from the test runner.
     4. Use your magic power and debug, add prints etc. until you discover the issue.
+
+Now, let's try to fix it:
+
+    1. In the `lib/python/debugpy/adapter/clients.py` let's find the line with parsing `cwd` (around 375) and change it to the expected testing path (absolute path).
+    2. Run the debugging.
+    3. It works!
